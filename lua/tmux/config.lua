@@ -35,7 +35,7 @@ return fn.nested(2, function (P)
   vim.o.splitright = true
   vim.o.splitbelow = true
 
-  vim.o.mouse = 'a'
+  vim.o.mouse = ''
 
   local disable_plugins = {
     '2html_plugin',
