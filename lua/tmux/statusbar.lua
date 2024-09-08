@@ -63,24 +63,25 @@ local functions = function (P)
     end,
     window_name = function (_, tid)
       tid = gettid(tid)
+      return ''
 
-      local buffers = vim.fn.tabpagebuflist(tid)
-      local winid = vim.fn.tabpagewinnr(tid)
-      local bufid = buffers[winid]
+      -- local buffers = vim.fn.tabpagebuflist(tid)
+      -- local winid = vim.fn.tabpagewinnr(tid)
+      -- local bufid = buffers[winid]
 
-      local has_title = function (bid)
-        return pcall(function ()
-          return vim.api.nvim_buf_get_var(bid, 'term_title')
-        end)
-      end
-      if not has_title(bufid) then
-        return ''
-      end
+      -- local has_title = function (bid)
+      --   return pcall(function ()
+      --     return vim.api.nvim_buf_get_var(bid, 'term_title')
+      --   end)
+      -- end
+      -- if not has_title(bufid) then
+      --   return ''
+      -- end
 
-      return vim.fn.fnamemodify(
-        vim.api.nvim_buf_get_var(bufid, 'term_title'),
-        ':t'
-      )
+      -- return vim.fn.fnamemodify(
+      --   vim.api.nvim_buf_get_var(bufid, 'term_title'),
+      --   ':t'
+      -- )
     end,
     window_zoomed_flag = function (_, tid)
       return is_zoom(gettid(tid)) and 1 or 0, '%d'
