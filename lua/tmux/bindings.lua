@@ -9,7 +9,7 @@ return fn.nested(2, function (P, M)
   M.bind('p', cmds.previous_window {} )
   M.bind('\\', cmds.split_window { 'v' } )
   M.bind('-', cmds.split_window { 'h' } )
-  M.bind('K', cmds.kill_window {} )
+  M.bind('x', cmds.kill_window {} )
   M.bind(',', cmds.command_prompt {
     I = function ()
       return vim.fn.fnamemodify(
