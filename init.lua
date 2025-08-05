@@ -1,6 +1,8 @@
-vim.cmd([[source ~/.tmux.nvim/antiphoton.vim]])
-vim.cmd([[source ~/.tmux.nvim/highlights.vim]])
-vim.opt.wrap = true
-vim.opt.rtp:append({ "~/.tmux.nvim" })
+vim.cmd([[
+source ~/.tmux.nvim/antiphoton.vim
+source ~/.tmux.nvim/highlights.vim
+set wrap
+set rtp+=~/.tmux.nvim
+]])
 local tmux = require("tmux")
 tmux.start()
